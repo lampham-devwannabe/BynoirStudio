@@ -1,0 +1,59 @@
+/* Navigation Bar */
+
+#navigation-bar {
+  background-color: #f8f9fa;
+  padding: 0 7% 0;
+}
+
+/* Header */
+#header {
+  background-image: linear-gradient(180deg, #ccc, #fff);
+  text-align: center;
+}
+
+#header h1 {
+  color: #fff;
+}
+
+#header p {
+  padding-top: 1rem;
+  color: #72848f;
+}
+
+#header .container-fluid {
+  padding: 3% 0 5%;
+}
+
+/* Product */
+#product .row {
+  padding: 3% 10% 3%;
+}
+
+#product .list-group {
+  padding-top: 17%;
+}
+/* Footer */
+#footer {
+  padding: 7% 15%;
+  background-color: #000;
+  text-align: center;
+}
+
+#footer p {
+  color: #fff;
+}
+
+.p-img {
+  height: 300px;
+  width: 450px;
+}
+
+.icon-hover:hover {
+  border-color: #3b71ca !important;
+  background-color: white !important;
+  color: #3b71ca !important;
+}
+
+.icon-hover:hover i {
+  color: #3b71ca !important;
+}
