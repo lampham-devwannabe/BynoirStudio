@@ -14,21 +14,38 @@
                 <li class="nav-item px-2"><a class="nav-link fw-medium" href="#collection">Collection</a></li>
                 <li class="nav-item px-2"><a class="nav-link fw-medium" href="#outlet">Outlet</a></li>
             </ul>
-            <form class="d-flex"><a class="text-1000" href="#!">
-                    <svg class="feather feather-shopping-cart me-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="9" cy="21" r="1"></circle>
-                        <circle cx="20" cy="21" r="1"></circle>
-                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                    </svg></a><a class="text-1000" href="#!">
-                    <svg class="feather feather-search me-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg></a><a class="text-1000" href="#!">
-                    <svg class="feather feather-user me-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                    </svg></a></form>
+            <!-- Cart button -->
+            <a class="text-1000" href="#!">
+                <svg class="feather feather-shopping-cart me-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg></a>
+            <!-- Search button -->
+            <a class="text-1000" href="#!" id="searchButton">
+                <svg class="feather feather-search me-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg></a>
+            <!-- Search box -->
+            <div class="s005" id="searchBox" style="display: none;">
+                <form action="search" method="POST" id="searchForm">
+                    <div class="inner-form">
+                        <div class="input-field">
+                            <input class="form-control" name="keyword" id="search-input" type="text" placeholder="Type to search..." onkeypress="return handleKeyPress(event)"/>                                   
+                        </div>
+                    </div>                          
+                </form>
+            </div>
+            <!-- Login/signup button -->
+            <a class="text-1000" href="#!">
+                <svg class="feather feather-user me-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg></a>
         </div>
     </div>
 </nav>
+
+<script src="${pageContext.request.contextPath}/assets/js/navbar.js" type="text/javascript"></script>
 

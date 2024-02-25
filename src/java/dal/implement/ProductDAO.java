@@ -15,6 +15,7 @@ import model.Products;
  */
 public class ProductDAO extends GenericDAO<Products> {
 
+    // return all products
     @Override
     public List<Products> findAll() {
         List<Products> list = queryGenericDAO(Products.class);
@@ -25,7 +26,8 @@ public class ProductDAO extends GenericDAO<Products> {
     public int insert(Products t) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
+    
+    // return latest product
     public Products latestProduct() {
         String sql = "SELECT * FROM Products ORDER BY product_id DESC";
         parameterMap = new LinkedHashMap<>();
@@ -33,6 +35,7 @@ public class ProductDAO extends GenericDAO<Products> {
         return list.get(0);
     }
 
+    // find product by category id
     public List<Products> findByCateId(int category_id) {
         String sql = "SELECT * FROM Products WHERE [category_id] = ?";
         parameterMap = new LinkedHashMap<>();
@@ -41,6 +44,7 @@ public class ProductDAO extends GenericDAO<Products> {
         return list;
     }
 
+    // find product by product id
     public Products findById(int product_id) {
         String sql = "SELECT * FROM Products WHERE [product_id] = ?";
         parameterMap = new LinkedHashMap<>();
@@ -48,4 +52,13 @@ public class ProductDAO extends GenericDAO<Products> {
         List<Products> list = queryGenericDAO(Products.class, sql, parameterMap);
         return list.get(0);
     } 
+    
+    // find product by product name
+    public List<Products> findByName(String keyword) {
+        String sql = "SELECT * FROM Products WHERE product_name like ?";
+        parameterMap = new LinkedHashMap<>();
+        parameterMap.put("product_name", "%" + keyword + "%");
+        List<Products> list = queryGenericDAO(Products.class, sql, parameterMap);
+        return list;
+    }
 }

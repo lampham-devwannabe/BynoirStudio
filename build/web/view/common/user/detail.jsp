@@ -85,7 +85,7 @@
                                 role="tab"
                                 aria-controls="ex1-pills-1"
                                 aria-selected="true"
-                                >Specification</a
+                                >Detail information</a
                             >
                         </li>
                     </ul>
@@ -102,23 +102,23 @@
 
                             <table class="table border mt-3 mb-2">
                                 <tr>
-                                    <th class="py-2">Display:</th>
+                                    <th class="py-2">ID</th>
                                     <td class="py-2">13.3-inch LED-backlit display with IPS</td>
                                 </tr>
                                 <tr>
-                                    <th class="py-2">Processor capacity:</th>
+                                    <th class="py-2">Size</th>
                                     <td class="py-2">2.3GHz dual-core Intel Core i5</td>
                                 </tr>
                                 <tr>
-                                    <th class="py-2">Camera quality:</th>
+                                    <th class="py-2">Measurements</th>
                                     <td class="py-2">720p FaceTime HD camera</td>
                                 </tr>
                                 <tr>
-                                    <th class="py-2">Memory</th>
+                                    <th class="py-2">Height</th>
                                     <td class="py-2">8 GB RAM or 16 GB RAM</td>
                                 </tr>
                                 <tr>
-                                    <th class="py-2">Graphics</th>
+                                    <th class="py-2">Weight</th>
                                     <td class="py-2">Intel Iris Plus Graphics 640</td>
                                 </tr>
                             </table>
@@ -126,76 +126,77 @@
                             <!-- Pills content -->
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="px-0 border rounded-2 shadow-0">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Similar items</h5>
-                                    <div class="d-flex mb-3">
-                                        <a href="#" class="me-3">
-                                            <img
-                                                src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/8.webp"
-                                                style="min-width: 96px; height: 96px"
-                                                class="img-md img-thumbnail"
-                                                />
-                                        </a>
-                                        <div class="info">
-                                            <a href="#" class="nav-link mb-1">
-                                                Rucksack Backpack Large <br />
-                                                Line Mounts
-                                            </a>
-                                            <strong class="text-dark"> $38.90</strong>
-                                        </div>
-                                    </div>
 
-                                    <div class="d-flex mb-3">
-                                        <a href="#" class="me-3">
-                                            <img
-                                                src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/9.webp"
-                                                style="min-width: 96px; height: 96px"
-                                                class="img-md img-thumbnail"
-                                                />
-                                        </a>
-                                        <div class="info">
-                                            <a href="#" class="nav-link mb-1">
-                                                Summer New Men's Denim <br />
-                                                Jeans Shorts
-                                            </a>
-                                            <strong class="text-dark"> $29.50</strong>
-                                        </div>
-                                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="px-0 border rounded-2 shadow-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Similar items</h5>
+                            <div class="d-flex mb-3">
+                                <a href="#" class="me-3">
+                                    <img
+                                        src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/8.webp"
+                                        style="min-width: 96px; height: 96px"
+                                        class="img-md img-thumbnail"
+                                        />
+                                </a>
+                                <div class="info">
+                                    <a href="#" class="nav-link mb-1">
+                                        Rucksack Backpack Large <br />
+                                        Line Mounts
+                                    </a>
+                                    <strong class="text-dark"> $38.90</strong>
+                                </div>
+                            </div>
 
-                                    <div class="d-flex mb-3">
-                                        <a href="#" class="me-3">
-                                            <img
-                                                src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/10.webp"
-                                                style="min-width: 96px; height: 96px"
-                                                class="img-md img-thumbnail"
-                                                />
-                                        </a>
-                                        <div class="info">
-                                            <a href="#" class="nav-link mb-1">
-                                                T-shirts with multiple colors, for men and lady
-                                            </a>
-                                            <strong class="text-dark"> $120.00</strong>
-                                        </div>
-                                    </div>
+                            <div class="d-flex mb-3">
+                                <a href="#" class="me-3">
+                                    <img
+                                        src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/9.webp"
+                                        style="min-width: 96px; height: 96px"
+                                        class="img-md img-thumbnail"
+                                        />
+                                </a>
+                                <div class="info">
+                                    <a href="#" class="nav-link mb-1">
+                                        Summer New Men's Denim <br />
+                                        Jeans Shorts
+                                    </a>
+                                    <strong class="text-dark"> $29.50</strong>
+                                </div>
+                            </div>
 
-                                    <div class="d-flex">
-                                        <a href="#" class="me-3">
-                                            <img
-                                                src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/11.webp"
-                                                style="min-width: 96px; height: 96px"
-                                                class="img-md img-thumbnail"
-                                                />
-                                        </a>
-                                        <div class="info">
-                                            <a href="#" class="nav-link mb-1">
-                                                Blazer Suit Dress Jacket for Men, Blue color
-                                            </a>
-                                            <strong class="text-dark"> $339.90</strong>
-                                        </div>
-                                    </div>
+                            <div class="d-flex mb-3">
+                                <a href="#" class="me-3">
+                                    <img
+                                        src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/10.webp"
+                                        style="min-width: 96px; height: 96px"
+                                        class="img-md img-thumbnail"
+                                        />
+                                </a>
+                                <div class="info">
+                                    <a href="#" class="nav-link mb-1">
+                                        T-shirts with multiple colors, for men and lady
+                                    </a>
+                                    <strong class="text-dark"> $120.00</strong>
+                                </div>
+                            </div>
+
+                            <div class="d-flex">
+                                <a href="#" class="me-3">
+                                    <img
+                                        src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/11.webp"
+                                        style="min-width: 96px; height: 96px"
+                                        class="img-md img-thumbnail"
+                                        />
+                                </a>
+                                <div class="info">
+                                    <a href="#" class="nav-link mb-1">
+                                        Blazer Suit Dress Jacket for Men, Blue color
+                                    </a>
+                                    <strong class="text-dark"> $339.90</strong>
                                 </div>
                             </div>
                         </div>

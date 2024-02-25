@@ -8,7 +8,7 @@
     <!-- Categories -->
     <ul class="nav nav-pills justify-content-center mb-5">
         <c:forEach items="${cateList}" var="c">
-            <li class="nav-item ${flag == c.category_id ? "active" : ""}" style="text-align: center"><button class="nav-link active"><a href="category?category_id=${c.category_id}">${c.category_name}</a></button></li>
+            <a href="category?category_id=${c.category_id}"><li class="list-group-item ${flag == c.category_id ? "active" : ""}" style="text-align: center">${c.category_name}</li></a>
                     </c:forEach>                
     </ul>  
 </div>

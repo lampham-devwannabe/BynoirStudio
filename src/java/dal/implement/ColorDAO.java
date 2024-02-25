@@ -38,9 +38,4 @@ public class ColorDAO extends GenericDAO<Colors> {
         List<Colors> list = queryGenericDAO(Colors.class, sql, parameterMap);
         return list.get(0);
     }
-    
-    public static void main(String[] args) {
-        ColorDAO dao = new ColorDAO();
-        System.out.println(dao.findColorByProductId(1));
-    }
 }

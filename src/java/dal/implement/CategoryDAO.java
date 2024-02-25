@@ -39,9 +39,4 @@ public class CategoryDAO extends GenericDAO<Categories> {
         List<Categories> list = queryGenericDAO(Categories.class, sql, parameterMap);
         return list.get(0);
     }
-
-    public static void main(String[] args) {
-        CategoryDAO dao = new CategoryDAO();
-        System.out.println(dao.findCateByProductId(1));
-    }
 }
