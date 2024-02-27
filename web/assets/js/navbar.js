@@ -9,15 +9,20 @@ document.getElementById('searchButton').addEventListener('click', function () {
 });
 
 function handleKeyPress(event) {
-    if (event.keyCode === 13) { // Check if Enter key is pressed
-        event.preventDefault(); // Prevent default form submission
-        submitForm(); // Call function to submit the form
+    // check if Enter key is pressed
+    if (event.keyCode === 13) {
+        // prevent default submission
+        event.preventDefault();
+        // submit  form
+        submitForm();
     }
 }
 
 function submitForm() {
-    var keyword = document.getElementById('search-input').value.trim(); // Get input value    
-    document.getElementById('searchForm').action = 'search'; // Set form action to servlet endpoint
-    document.getElementById('searchForm').method = 'POST'; // Set form method to POST
-    document.getElementById('searchForm').submit(); // Submit the form  
+    // Set form action to servlet endpoint
+    document.getElementById('searchForm').action = 'search';
+    // Set form method to POST
+    document.getElementById('searchForm').method = 'POST';
+    // Submit the form  
+    document.getElementById('searchForm').submit();
 }

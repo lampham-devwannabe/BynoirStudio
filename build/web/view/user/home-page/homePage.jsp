@@ -19,6 +19,12 @@
     </head>
     <body>
         <main class="main" id="top">
+            <c:if test="${not empty sessionScope['signUpSuccess']}">
+                <script>
+                    alert('Sign Up Successfully');
+                </script>
+                <c:remove var="signUpSuccess" scope="session" />
+            </c:if>
             <!-- Navbar -->
             <jsp:include page="../../common/user/navbar.jsp"></jsp:include>
                 <!-- Header -->   
@@ -38,7 +44,7 @@
         <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
         <script src="${pageContext.request.contextPath}/assets/vendor/feather-icons/feather.min.js"></script>
         <script>
-            feather.replace();
+                    feather.replace();
         </script>
         <script src="${pageContext.request.contextPath}/assets/js/theme.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">

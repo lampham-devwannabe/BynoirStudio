@@ -4,182 +4,61 @@
     Author     : lamph
 --%>
 
-<section class="py-0">
+<section>
     <div class="container">
-        <div class="row h-100">
-            <div class="col-lg-7 mx-auto text-center mb-6">
-                <h5 class="fs-3 fs-lg-5 lh-sm mb-3">Checkout New Arrivals</h5>
+        <div class="row h-100 g-0">
+            <div class="col-md-6">
+                <div class="bg-300 p-4 h-100 d-flex flex-column justify-content-center">
+                    <h4 class="text-800">Exclusive collection 2021</h4>
+                    <h1 class="fw-semi-bold lh-sm fs-4 fs-lg-5 fs-xl-6">Be exclusive</h1>
+                    <p class="mb-5 fs-1">The best everyday option in a Super Saver range within a reasonable price. It is our responsibility�to keep you 100 percent stylish. Be smart &amp; , trendy with us.</p>
+                    <div class="d-grid gap-2 d-md-block"><a class="btn btn-lg btn-dark" href="#" role="button">Explore</a></div>
+                </div>
             </div>
-            <div class="col-12">
-                <div class="carousel slide" id="carouselNewArrivals" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="10000">
-                            <div class="row h-100 align-items-center g-2">
-                                <div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-                                    <div class="card card-span h-100 text-white"><img class="card-img h-100" src="${pageContext.request.contextPath}/onthegojacket.jpg" alt="..." />
-                                        <div class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-                                            <h6 class="text-primary">$175</h6>
-                                            <p class="text-400 fs-1">Jumper set for Women</p>
-                                            <h4 class="text-light">Flat Hill Slingback</h4>
-                                        </div><a class="stretched-link" href="#"></a>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-                                    <div class="card card-span h-100 text-white"><img class="card-img h-100" src="${pageContext.request.contextPath}/mieset.jpg" alt="..." />
-                                        <div class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-                                            <h6 class="text-primary">$175</h6>
-                                            <p class="text-400 fs-1">Jumper set for Women</p>
-                                            <h4 class="text-light">Ocean Blue Ring</h4>
-                                        </div><a class="stretched-link" href="#"></a>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-                                    <div class="card card-span h-100 text-white"><img class="card-img h-100" src="${pageContext.request.contextPath}/bowiecape.jpg" alt="..." />
-                                        <div class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-                                            <h6 class="text-primary">$175</h6>
-                                            <p class="text-400 fs-1">Jumper set for Women</p>
-                                            <h4 class="text-light">Brown Leathered Wallet</h4>
-                                        </div><a class="stretched-link" href="#"></a>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-                                    <div class="card card-span h-100 text-white"><img class="card-img h-100" src="${pageContext.request.contextPath}/hazelset.jpg" alt="..." />
-                                        <div class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-                                            <h6 class="text-primary">$175</h6>
-                                            <p class="text-400 fs-1">Jumper set for Women</p>
-                                            <h4 class="text-light">Silverside Wristwatch</h4>
-                                        </div><a class="stretched-link" href="#"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <div class="row h-100 align-items-center g-2">
-                                <div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-                                    <div class="card card-span h-100 text-white"><img class="card-img h-100" src="${pageContext.request.contextPath}/corsetviralset.jpg" alt="..." />
-                                        <div class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-                                            <h6 class="text-primary">$175</h6>
-                                            <p class="text-400 fs-1">Jumper set for Women</p>
-                                            <h4 class="text-light">Flat Hill Slingback</h4>
-                                        </div><a class="stretched-link" href="#"></a>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-                                    <div class="card card-span h-100 text-white"><img class="card-img h-100" src="${pageContext.request.contextPath}/carolyntop.jpg" alt="..." />
-                                        <div class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-                                            <h6 class="text-primary">$175</h6>
-                                            <p class="text-400 fs-1">Jumper set for Women</p>
-                                            <h4 class="text-light">Ocean Blue Ring</h4>
-                                        </div><a class="stretched-link" href="#"></a>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-                                    <div class="card card-span h-100 text-white"><img class="card-img h-100" src="${pageContext.request.contextPath}/auradress2.jpg" alt="..." />
-                                        <div class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-                                            <h6 class="text-primary">$175</h6>
-                                            <p class="text-400 fs-1">Jumper set for Women</p>
-                                            <h4 class="text-light">Brown Leathered Wallet</h4>
-                                        </div><a class="stretched-link" href="#"></a>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-                                    <div class="card card-span h-100 text-white"><img class="card-img h-100" src="${pageContext.request.contextPath}/anniecape.jpg" alt="..." />
-                                        <div class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-                                            <h6 class="text-primary">$175</h6>
-                                            <p class="text-400 fs-1">Jumper set for Women</p>
-                                            <h4 class="text-light">Silverside Wristwatch</h4>
-                                        </div><a class="stretched-link" href="#"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="3000">
-                            <div class="row h-100 align-items-center g-2">
-                                <div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-                                    <div class="card card-span h-100 text-white"><img class="card-img h-100" src="${pageContext.request.contextPath}/annadress.jpg" alt="..." />
-                                        <div class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-                                            <h6 class="text-primary">$175</h6>
-                                            <p class="text-400 fs-1">Jumper set for Women</p>
-                                            <h4 class="text-light">Flat Hill Slingback</h4>
-                                        </div><a class="stretched-link" href="#"></a>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-                                    <div class="card card-span h-100 text-white"><img class="card-img h-100" src="${pageContext.request.contextPath}/violatop.jpg" alt="..." />
-                                        <div class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-                                            <h6 class="text-primary">$175</h6>
-                                            <p class="text-400 fs-1">Jumper set for Women</p>
-                                            <h4 class="text-light">Ocean Blue Ring</h4>
-                                        </div><a class="stretched-link" href="#"></a>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-                                    <div class="card card-span h-100 text-white"><img class="card-img h-100" src="${pageContext.request.contextPath}/milliejacket.jpg" alt="..." />
-                                        <div class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-                                            <h6 class="text-primary">$175</h6>
-                                            <p class="text-400 fs-1">Jumper set for Women</p>
-                                            <h4 class="text-light">Brown Leathered Wallet</h4>
-                                        </div><a class="stretched-link" href="#"></a>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-                                    <div class="card card-span h-100 text-white"><img class="card-img h-100" src="${pageContext.request.contextPath}/miliskirt.jpg" alt="..." />
-                                        <div class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-                                            <h6 class="text-primary">$175</h6>
-                                            <p class="text-400 fs-1">Jumper set for Women</p>
-                                            <h4 class="text-light">Silverside Wristwatch</h4>
-                                        </div><a class="stretched-link" href="#"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row h-100 align-items-center g-2">
-                                <div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-                                    <div class="card card-span h-100 text-white"><img class="card-img h-100" src="${pageContext.request.contextPath}/fylinadress2.jpg" alt="..." />
-                                        <div class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-                                            <h6 class="text-primary">$175</h6>
-                                            <p class="text-400 fs-1">Jumper set for Women</p>
-                                            <h4 class="text-light">Flat Hill Slingback</h4>
-                                        </div><a class="stretched-link" href="#"></a>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-                                    <div class="card card-span h-100 text-white"><img class="card-img h-100" src="${pageContext.request.contextPath}/hanahdress.jpg" alt="..." />
-                                        <div class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-                                            <h6 class="text-primary">$175</h6>
-                                            <p class="text-400 fs-1">Jumper set for Women</p>
-                                            <h4 class="text-light">Ocean Blue Ring</h4>
-                                        </div><a class="stretched-link" href="#"></a>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-                                    <div class="card card-span h-100 text-white"><img class="card-img h-100" src="${pageContext.request.contextPath}/crystaldress.jpg" alt="..." />
-                                        <div class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-                                            <h6 class="text-primary">$175</h6>
-                                            <p class="text-400 fs-1">Jumper set for Women</p>
-                                            <h4 class="text-light">Brown Leathered Wallet</h4>
-                                        </div><a class="stretched-link" href="#"></a>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-3 mb-3 mb-md-0 h-100">
-                                    <div class="card card-span h-100 text-white"><img class="card-img h-100" src="${pageContext.request.contextPath}/chulyjacket.jpg" alt="..." />
-                                        <div class="card-img-overlay bg-dark-gradient d-flex flex-column-reverse">
-                                            <h6 class="text-primary">$175</h6>
-                                            <p class="text-400 fs-1">Jumper set for Women</p>
-                                            <h4 class="text-light">Silverside Wristwatch</h4>
-                                        </div><a class="stretched-link" href="#"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselNewArrivals" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselNewArrivals" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next </span></button>
-                        </div>
+            <div class="col-md-6">
+                <div class="card card-span h-100 text-white"><img class="card-img h-100" src="${pageContext.request.contextPath}/DBimages/auradress2.jpg" alt="..." />
+                    <div class="card-img-overlay bg-dark-gradient">
+                        <div class="d-flex align-items-end justify-content-center h-100"><a class="btn btn-lg text-light fs-1" href="#!" role="button">Outfit
+                                <svg class="bi bi-arrow-right-short" xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"> </path>
+                                </svg></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row h-100 g-2 py-1">
+            <div class="col-md-4">
+                <div class="card card-span h-100 text-white"><img class="card-img h-100" src="${pageContext.request.contextPath}/DBimages/carolyntop.jpg" alt="..." />
+                    <div class="card-img-overlay bg-dark-gradient">
+                        <div class="d-flex align-items-end justify-content-center h-100"><a class="btn btn-lg text-light fs-1" href="#!" role="button">Vanity Bags
+                                <svg class="bi bi-arrow-right-short" xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"> </path>
+                                </svg></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-span h-100 text-white"><img class="card-img h-100" src="${pageContext.request.contextPath}/DBimages/ziziset.jpg" alt="..." />
+                    <div class="card-img-overlay bg-dark-gradient">
+                        <div class="d-flex align-items-end justify-content-center h-100"><a class="btn btn-lg text-light fs-1" href="#!" role="button">Hats
+                                <svg class="bi bi-arrow-right-short" xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"> </path>
+                                </svg></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-span h-100 text-white"><img class="card-img h-100" src="${pageContext.request.contextPath}/DBimages/crystaldress.jpg" alt="..." />
+                    <div class="card-img-overlay bg-dark-gradient">
+                        <div class="d-flex align-items-end justify-content-center h-100"><a class="btn btn-lg text-light fs-1" href="#!" role="button">High Heels
+                                <svg class="bi bi-arrow-right-short" xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"> </path>
+                                </svg></a></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- end of .container-->
+
 </section>

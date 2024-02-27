@@ -28,6 +28,5 @@ public class Users {
     String user_email;
     String user_fullname;
     String user_password;
-    boolean isAdmin;
-    boolean gender;
+    boolean admin;
 }
