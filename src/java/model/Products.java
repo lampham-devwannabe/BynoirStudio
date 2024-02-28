@@ -27,7 +27,7 @@ public class Products {
     private int product_id;
     private String category_id;
     private String product_name;
-    private Float product_price;
+    private double product_price;
     private String product_description;
     private String img;
 }

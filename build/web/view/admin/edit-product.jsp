@@ -29,13 +29,16 @@
                     <div class="modal-content">
                         <form action="editProduct" method="POST">
                             <div class="header">						
-                                <h4 class="modal-title text-center">Edit Employee</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title text-center">Edit Employee</h4>                               
                             </div>
-                            <div class="modal-body">					
+                            <div class="modal-body">
                                 <div class="form-group">
-                                    <label>Name</label>
-                                    <input type="text" name="name" class="form-control" value="${p.product_name}" required>
+                                    <label>Product ID</label>
+                                    <input type="text" name="id" class="form-control" value="${p.product_id}" readonly required>
+                            </div>
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" name="name" class="form-control" value="${p.product_name}" required>
                             </div>
                             <div class="form-group">
                                 <label>Image adress</label>

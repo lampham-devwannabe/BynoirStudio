@@ -86,6 +86,7 @@ public class AddProductController extends HttpServlet {
             colorDAO.insertByProductId(p.getProduct_id(), color);
             response.sendRedirect("manageProduct");
         } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 

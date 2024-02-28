@@ -78,7 +78,8 @@ public class ProductDAO extends GenericDAO<Products> {
         deleteGenericDAO(sql, parameterMap);
     }
 
-    public void insertProduct(int category_id, String product_name, Float product_price, String product_description, String img) {
+    public void insertProduct(int category_id, String product_name, Float product_price,
+            String product_description, String img) {
         String sql = "INSERT INTO [dbo].[Products]\n"
                 + "           ([category_id]\n"
                 + "           ,[product_name]\n"
@@ -98,5 +99,24 @@ public class ProductDAO extends GenericDAO<Products> {
         parameterMap.put("product_description", product_description);
         parameterMap.put("img", img);
         insertGenericDAO(sql, parameterMap);
+    }
+
+    public void updateProduct(int category_id, String product_name, double product_price,
+            String product_description, String img, int product_id) {
+        String sql = "UPDATE [dbo].[Products]\n"
+                + "   SET [category_id] = ?\n"
+                + "      ,[product_name] = ?\n"
+                + "      ,[product_price] = ?\n"
+                + "      ,[product_description] = ?\n"
+                + "      ,[img] = ?\n"
+                + " WHERE [product_id] = ?";
+        parameterMap = new LinkedHashMap<>();
+        parameterMap.put("category_id", category_id);
+        parameterMap.put("product_name", product_name);
+        parameterMap.put("product_price", product_price);
+        parameterMap.put("product_description", product_description);
+        parameterMap.put("img", img);
+        parameterMap.put("product_id", product_id);
+        updateGenericDAO(sql, parameterMap);
     }
 }

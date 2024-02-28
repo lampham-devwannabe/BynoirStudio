@@ -95,7 +95,6 @@
                                     <td>${p.product_description}</td>
                                     <td>${p.product_price}</td>
                                     <td>
-<!--                                        <a href="load?pid=${p.product_id}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>-->
                                         <form action="load" method="POST">
                                             <input type="hidden" name="edit_id" value="${p.product_id}">
                                             <button type="submit" class="edit" data-toggle="modal" style="background: none; border: none; cursor: pointer;"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></button>

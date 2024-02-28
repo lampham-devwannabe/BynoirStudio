@@ -59,4 +59,15 @@ public class ColorDAO extends GenericDAO<Colors> {
         parameterMap.put("color", color);
         insertGenericDAO(sql, parameterMap);
     }
+
+    public void updateColor(String color, int product_id) {
+        String sql = "UPDATE [dbo].[Colors]\n"
+                + "   SET [product_id] = ?\n"
+                + "      ,[color] = ?\n"
+                + " WHERE [product_id] = ?";
+        parameterMap = new LinkedHashMap<>();
+        parameterMap.put("product_id", product_id);
+        parameterMap.put("color", color);
+        updateGenericDAO(sql, parameterMap);
+    }
 }
