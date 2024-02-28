@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
-package controller.user;
+package controller.admin;
 
 import dal.implement.CategoryDAO;
 import dal.implement.ProductDAO;
@@ -22,7 +22,7 @@ import model.Products;
  *
  * @author lamph
  */
-public class ProductController extends HttpServlet {
+public class ManageProductController extends HttpServlet {
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /** 
      * Handles the HTTP <code>GET</code> method.
@@ -35,19 +35,12 @@ public class ProductController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         ProductDAO pDAO = new ProductDAO();
-        CategoryDAO cDAO = new CategoryDAO();
-        // create session
-        HttpSession session = request.getSession();
-        // get data from DB
-        List<Products> productList = pDAO.findAll();
-        List<Categories> cateList = cDAO.findAll();     
-        Products latest = pDAO.latestProduct();
-        // set data
-        session.setAttribute("productList", productList);
-        session.setAttribute("cateList", cateList);
-        session.setAttribute("latest", latest);
-        // to Product
-        request.getRequestDispatcher("view/common/user/product.jsp").forward(request, response);
+        CategoryDAO cateDAO = new CategoryDAO();
+        List<Products> list = pDAO.findAll();
+        List<Categories> cList = cateDAO.findAll();
+        request.setAttribute("productList", list);
+        request.setAttribute("categoryList", cList);
+        request.getRequestDispatcher("view/admin/manage-product.jsp").forward(request, response);
     } 
 
     /** 
@@ -60,7 +53,7 @@ public class ProductController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-
+        
     }
 
     /** 

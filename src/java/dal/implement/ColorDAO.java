@@ -38,4 +38,25 @@ public class ColorDAO extends GenericDAO<Colors> {
         List<Colors> list = queryGenericDAO(Colors.class, sql, parameterMap);
         return list.get(0);
     }
+
+    public void deleteByProductId(int product_id) {
+        String sql = "DELETE FROM [dbo].[Colors]\n"
+                + "      WHERE [product_id] = ?";
+        parameterMap = new LinkedHashMap<>();
+        parameterMap.put("product_id", product_id);
+        deleteGenericDAO(sql, parameterMap);
+    }
+
+    public void insertByProductId(int product_id, String color) {
+        String sql = "INSERT INTO [dbo].[Colors]\n"
+                + "           ([product_id]\n"
+                + "           ,[color])\n"
+                + "     VALUES\n"
+                + "           (?\n"
+                + "           ,?)";
+        parameterMap = new LinkedHashMap<>();
+        parameterMap.put("product_id", product_id);
+        parameterMap.put("color", color);
+        insertGenericDAO(sql, parameterMap);
+    }
 }
