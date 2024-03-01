@@ -1,6 +1,6 @@
 <%-- 
-    Document   : edit-product
-    Created on : Feb 28, 2024, 12:56:28 PM
+    Document   : edit-user
+    Created on : Mar 1, 2024, 9:01:46 PM
     Author     : lamph
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -249,49 +249,41 @@
     <body>
         <!-- Navbar -->
         <jsp:include page="../common/user/navbar.jsp"></jsp:include>
-            <div id="editEmployeeModal" style="margin: 5% 0 5%">
+            <div style="margin: 5% 0 5%">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <form action="editProduct" method="POST">
+                        <form action="editAccount" method="POST">
                             <div class="header">						
-                                <h4 class="modal-title text-center">Edit Employee</h4>                               
+                                <h4 class="modal-title text-center">Edit Account</h4>                               
                             </div>
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <label>Product ID</label>
-                                    <input type="text" name="id" class="form-control" value="${p.product_id}" readonly required>
+                                    <label>User ID</label>
+                                    <input type="text" name="id" class="form-control" value="${u.user_id}" readonly required>
                             </div>
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" name="name" class="form-control" value="${p.product_name}" required>
+                                <input type="text" name="name" class="form-control" value="${u.user_fullname}" readonly required>
                             </div>
                             <div class="form-group">
-                                <label>Image adress</label>
-                                <input type="text" name="img" class="form-control" value="${p.img}" required>
-                            </div>
+                                <label>Email</label>
+                                <input type="text" name="email" class="form-control" value="${u.user_email}" readonly required>
+                            </div>                          		
                             <div class="form-group">
-                                <label>Color</label>
-                                <input type="text" name="color" class="form-control" value="${co.color}" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Description</label>
-                                <textarea class="form-control" name="desc" required>${p.product_description}</textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Price</label>
-                                <input type="text" name="price" class="form-control" value="${p.product_price}" required>
-                            </div>		
-                            <div class="form-group">
-                                <label>Category</label>
-                                <select name="category" class="form-select" aria-label>
-                                    <c:forEach items="${categoryList}" var="c">
-                                        <option ${p.category_id == c.category_id ? "selected" : ""} value="${c.category_id}">${c.category_name}</option>
-                                    </c:forEach>
-                                </select>
+                                <label>Role</label>
+                                <br/>
+                                <c:if test="${u.admin}">
+                                    <input type="radio" name="role" value="admin" checked="checked"> Admin
+                                    <input type="radio" name="role" value="user"> User
+                                </c:if>
+                                <c:if test="${!u.admin}">
+                                    <input type="radio" name="role" value="admin"> Admin
+                                    <input type="radio" name="role" value="user" checked="checked"> User
+                                </c:if>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <a href="manageProduct" class="btn btn-default">Cancel</a>
+                            <a href="manageAccount" class="btn btn-default">Cancel</a>
                             <input type="submit" class="btn btn-info" value="Save">
                         </div>
                     </form>

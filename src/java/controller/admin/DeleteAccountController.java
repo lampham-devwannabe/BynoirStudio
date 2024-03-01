@@ -3,51 +3,40 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
-package controller.user;
+package controller.admin;
 
-import dal.implement.CategoryDAO;
-import dal.implement.ProductDAO;
+import dal.implement.BillDAO;
+import dal.implement.UserDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-import java.util.List;
-import model.Categories;
-import model.Products;
 
 /**
  *
  * @author lamph
  */
-public class ProductController extends HttpServlet {
-   
+public class DeleteAccountController extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        ProductDAO pDAO = new ProductDAO();
-        CategoryDAO cDAO = new CategoryDAO();
-        // create session
-        HttpSession session = request.getSession();
-        // get data from DB
-        List<Products> productList = pDAO.findAll();
-        List<Categories> cateList = cDAO.findAll();     
-        Products latest = pDAO.latestProduct();
-        // set data
-        session.setAttribute("productList", productList);
-        session.setAttribute("cateList", cateList);
-        session.setAttribute("latest", latest);
-        // to Product
-        request.getRequestDispatcher("view/common/user/product.jsp").forward(request, response);
+        
     } 
 
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-
+        String id_raw = request.getParameter("uid");
+        int id = Integer.parseInt(id_raw);
+        UserDAO uDAO = new UserDAO();
+        BillDAO bDAO = new BillDAO();
+        bDAO.deleteByUserId(id);
+        uDAO.deleteById(id);
+        response.sendRedirect("manageAccount");
     }
 
     /** 

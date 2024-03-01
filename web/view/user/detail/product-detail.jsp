@@ -15,15 +15,16 @@
         <!-- CSS stylesheet -->
         <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/theme.css"/>
         <!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/assets/img/black-logo.png">      
+        <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/assets/img/black-logo.png">  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-xxxxxx" crossorigin="anonymous" />
     </head>
     <body>
         <main class="main" id="top">
             <!-- Navbar -->
             <jsp:include page="../../common/user/navbar.jsp"></jsp:include>
-            <!-- Product detail -->
+                <!-- Product detail -->
             <jsp:include page="../../common/user/detail.jsp"></jsp:include>
-            <!-- Footer -->
+                <!-- Footer -->
             <jsp:include page="../../common/user/footer.jsp"></jsp:include>      
             </main>
             <script src="${pageContext.request.contextPath}/assets/vendor/@popperjs/popper.min.js"></script>

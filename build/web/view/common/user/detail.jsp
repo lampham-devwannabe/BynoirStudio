@@ -3,6 +3,8 @@
     Created on : Feb 23, 2024, 4:09:17?PM
     Author     : lamph
 --%>
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- content -->
 <section class="py-5" style="margin-top: 50px">
     <div class="container">
@@ -40,20 +42,21 @@
                         <label class="mb-2">Size</label>
                         <br/>
                         <select class="border border-secondary" style="height: 35px;">
-                            <option>Small</option>
-                            <option>Medium</option>
-                            <option>Large</option>
+                            <c:forEach items="${sizeList}" var="s">
+                                <option value="${s.size}" ${s.size_name == "Small" ? "selected" : ""}>${s.size_name}</option>
+                            </c:forEach>
+
                         </select>
                     </div>
                     <!-- col.// -->
                     <div class="col-md-4 col-6 mb-3">
                         <label class="mb-2 d-block">Quantity</label>
                         <div class="input-group mb-3" style="width: 170px;">
-                            <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon1" data-mdb-ripple-color="dark">
+                            <button class="btn btn-white border border-secondary px-3" type="button" id="minusButton" data-mdb-ripple-color="dark">
                                 <i class="fas fa-minus"></i>
                             </button>
-                            <input type="text" class="form-control text-center border border-secondary" placeholder="1" aria-label="Example text with button addon" aria-describedby="button-addon1" />
-                            <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon2" data-mdb-ripple-color="dark">
+                            <input type="text" class="form-control text-center border border-secondary" id="quantityInput" placeholder="1" aria-label="Example text with button addon" aria-describedby="minusButton plusButton" />
+                            <button class="btn btn-white border border-secondary px-3" type="button" id="plusButton" data-mdb-ripple-color="dark">
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>

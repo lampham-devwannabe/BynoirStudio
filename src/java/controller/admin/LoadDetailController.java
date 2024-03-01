@@ -2,7 +2,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-
 package controller.admin;
 
 import dal.implement.UserDAO;
@@ -12,34 +11,34 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.List;
 import model.Users;
 
 /**
  *
  * @author lamph
  */
-public class ManageAccountController extends HttpServlet {
+public class LoadDetailController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("UTF-8");
-        UserDAO uDAO = new UserDAO();
-        List<Users> userList = uDAO.findAll();
-        request.setAttribute("userList", userList);
-        request.getRequestDispatcher("view/admin/manage-account.jsp").forward(request, response);
-    } 
+            throws ServletException, IOException {
+
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-        
+            throws ServletException, IOException {
+        UserDAO uDAO = new UserDAO();
+        String id_raw = request.getParameter("edit_id");
+        int id = Integer.parseInt(id_raw);
+        Users u = uDAO.findByUserId(id);
+        request.setAttribute("u", u);
+        request.getRequestDispatcher("view/admin/edit-account.jsp").forward(request, response);
     }
 
-    /** 
+    /**
      * Returns a short description of the servlet.
+     *
      * @return a String containing servlet description
      */
     @Override

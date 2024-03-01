@@ -7,6 +7,7 @@ package controller.user;
 import dal.implement.CategoryDAO;
 import dal.implement.ColorDAO;
 import dal.implement.ProductDAO;
+import dal.implement.SizeDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -14,9 +15,11 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import java.util.List;
 import model.Categories;
 import model.Colors;
 import model.Products;
+import model.Sizes;
 
 /**
  *
@@ -31,6 +34,7 @@ public class DetailController extends HttpServlet {
         ProductDAO pDAO = new ProductDAO();
         CategoryDAO cateDAO = new CategoryDAO();
         ColorDAO colorDAO = new ColorDAO();
+        SizeDAO sizeDAO = new SizeDAO();
         HttpSession session = request.getSession();
         String id_raw = request.getParameter("product_id");
         int product_id;
@@ -39,6 +43,8 @@ public class DetailController extends HttpServlet {
             Products p = pDAO.findById(product_id);
             Categories cate = cateDAO.findCateByProductId(product_id);
             Colors color = colorDAO.findColorByProductId(product_id);
+            List<Sizes> sizeList = sizeDAO.findAll();
+            session.setAttribute("sizeList", sizeList);
             session.setAttribute("detail", p);
             session.setAttribute("cateDetail", cate);
             session.setAttribute("color", color);
