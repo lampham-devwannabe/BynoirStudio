@@ -5,7 +5,6 @@
 
 package controller.admin;
 
-import dal.implement.BillDAO;
 import dal.implement.UserDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -33,8 +32,6 @@ public class DeleteAccountController extends HttpServlet {
         String id_raw = request.getParameter("uid");
         int id = Integer.parseInt(id_raw);
         UserDAO uDAO = new UserDAO();
-        BillDAO bDAO = new BillDAO();
-        bDAO.deleteByUserId(id);
         uDAO.deleteById(id);
         response.sendRedirect("manageAccount");
     }

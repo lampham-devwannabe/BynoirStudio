@@ -24,12 +24,9 @@ import lombok.ToString;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Bills {
-    private int bill_id;
-    private Users user;
-    private String user_phone;
-    private Date bill_date;
-    private String address;
-    private String payment;
-    private Float total_price;
+public class Orders {
+    private int order_id;
+    private Date order_date;
+    private int user_id;
+    private double total_money;
 }

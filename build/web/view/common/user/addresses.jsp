@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<section class="py-11">
+<section class="py-11" id="outlet">
     <div class="bg-holder overlay overlay-0" style="background-image:url(${pageContext.request.contextPath}/assets/img/cta.png);background-position:center;background-size:cover;">
     </div>
     <!--/.bg-holder-->

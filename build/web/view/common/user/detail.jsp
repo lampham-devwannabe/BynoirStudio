@@ -18,12 +18,13 @@
             </aside>
             <main class="col-lg-6">
                 <div class="ps-lg-3">
-                    <h4 class="title text-dark">${detail.product_name}</h4>
-                    <span class="text-success ms-2">In stock</span>
-                </div>
+                    <h4 class="title text-dark">${detail.product_id}. ${detail.product_name}</h4>
+                    <c:if test="${quantity > 0}"><span class="text-success ms-2">In stock</span></c:if>
+                    <c:if test="${quantity <= 0}"><span class="text-danger ms-2">Out of stock</span></c:if>
+                    </div>
 
-                <div class="mb-3">
-                    <span class="h5">${detail.product_price}</span>
+                    <div class="mb-3">
+                        <span class="h5">${detail.product_price}</span>
                     <span class="text-muted">/per product</span>
                 </div>
                 <p>${detail.product_description}</p>
@@ -36,35 +37,39 @@
                 </div>
 
                 <hr/>
+                <form action="cart" method="POST">
+                    <input type="hidden" name="pid" value="${detail.product_id}">
+                    <c:if test="${quantity > 0}">
+                        <div class="row mb-4">
+                            <div class="col-md-4 col-6">
+                                <label class="mb-2">Size</label>
+                                <br/>
+                                <select name="sz" class="border border-secondary" style="height: 35px;">
+                                    <c:forEach items="${sizeList}" var="s">
+                                        <option value="${s.size}" ${s.size_name == "Small" ? "selected" : ""}>${s.size_name}</option>
+                                    </c:forEach>
 
-                <div class="row mb-4">
-                    <div class="col-md-4 col-6">
-                        <label class="mb-2">Size</label>
-                        <br/>
-                        <select class="border border-secondary" style="height: 35px;">
-                            <c:forEach items="${sizeList}" var="s">
-                                <option value="${s.size}" ${s.size_name == "Small" ? "selected" : ""}>${s.size_name}</option>
-                            </c:forEach>
-
-                        </select>
-                    </div>
-                    <!-- col.// -->
-                    <div class="col-md-4 col-6 mb-3">
-                        <label class="mb-2 d-block">Quantity</label>
-                        <div class="input-group mb-3" style="width: 170px;">
-                            <button class="btn btn-white border border-secondary px-3" type="button" id="minusButton" data-mdb-ripple-color="dark">
-                                <i class="fas fa-minus"></i>
-                            </button>
-                            <input type="text" class="form-control text-center border border-secondary" id="quantityInput" placeholder="1" aria-label="Example text with button addon" aria-describedby="minusButton plusButton" />
-                            <button class="btn btn-white border border-secondary px-3" type="button" id="plusButton" data-mdb-ripple-color="dark">
-                                <i class="fas fa-plus"></i>
-                            </button>
+                                </select>
+                            </div>
+                            <!-- col.// -->
+                            <div class="col-md-4 col-6 mb-3">
+                                <label class="mb-2 d-block">Quantity</label>
+                                <div class="input-group mb-3" style="width: 170px;">
+                                    <button class="btn btn-white border border-secondary px-3" type="button" id="minusButton" data-mdb-ripple-color="dark">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <input type="text" class="form-control text-center border border-secondary" id="quantityInput" name="num" value="1" placeholder="1" aria-label="Example text with button addon" aria-describedby="minusButton plusButton" />
+                                    <button class="btn btn-white border border-secondary px-3" type="button" id="plusButton" data-mdb-ripple-color="dark">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <a href="#" class="btn btn-warning shadow-0"> Buy now </a>
-                <a href="#" class="btn btn-primary shadow-0"> <i class="me-1 fa fa-shopping-basket"></i> Add to cart </a>
-                <a href="#" class="btn btn-light border border-secondary py-2 icon-hover px-3"> <i class="me-1 fa fa-heart fa-lg"></i> Save </a>
+                        <a href="#" class="btn btn-warning shadow-0"> Buy now </a>
+                        <input type="submit" value="Add to cart" class="btn btn-primary shadow-0">
+                        <a href="#" class="btn btn-light border border-secondary py-2 icon-hover px-3"> <i class="me-1 fa fa-heart fa-lg"></i> Save </a>
+                    </c:if>
+                </form>
         </div>
         </main>
     </div>
@@ -96,38 +101,36 @@
 
                     <!-- Pills content -->
                     <div class="tab-content" id="ex1-content">
-                        <div
-                            class="tab-pane fade show active"
-                            id="ex1-pills-1"
-                            role="tabpanel"
-                            aria-labelledby="ex1-tab-1"
-                            >
+                        <c:forEach items="${sizeList}" var="s">
+                            <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="ex1-tab-1">
 
-                            <table class="table border mt-3 mb-2">
-                                <tr>
-                                    <th class="py-2">ID</th>
-                                    <td class="py-2">13.3-inch LED-backlit display with IPS</td>
-                                </tr>
-                                <tr>
-                                    <th class="py-2">Size</th>
-                                    <td class="py-2">2.3GHz dual-core Intel Core i5</td>
-                                </tr>
-                                <tr>
-                                    <th class="py-2">Measurements</th>
-                                    <td class="py-2">720p FaceTime HD camera</td>
-                                </tr>
-                                <tr>
-                                    <th class="py-2">Height</th>
-                                    <td class="py-2">8 GB RAM or 16 GB RAM</td>
-                                </tr>
-                                <tr>
-                                    <th class="py-2">Weight</th>
-                                    <td class="py-2">Intel Iris Plus Graphics 640</td>
-                                </tr>
-                            </table>
+                                <table class="table border mt-3 mb-2">
+                                    <tr>
+                                        <th class="py-2">ID</th>
+                                        <td class="py-2">${s.size}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="py-2">Size</th>
+                                        <td class="py-2">${s.size_name}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="py-2">Measurements</th>
+                                        <td class="py-2">${s.measurements}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="py-2">Height</th>
+                                        <td class="py-2">${s.height}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="py-2">Weight</th>
+                                        <td class="py-2">${s.weight}</td>
+                                    </tr>
+                                </table>
 
-                            <!-- Pills content -->
-                        </div>
+
+
+                            </div>
+                        </c:forEach>
                     </div>
 
                 </div>
@@ -137,75 +140,49 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Similar items</h5>
-                            <div class="d-flex mb-3">
-                                <a href="#" class="me-3">
-                                    <img
-                                        src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/8.webp"
-                                        style="min-width: 96px; height: 96px"
-                                        class="img-md img-thumbnail"
-                                        />
-                                </a>
-                                <div class="info">
-                                    <a href="#" class="nav-link mb-1">
-                                        Rucksack Backpack Large <br />
-                                        Line Mounts
-                                    </a>
-                                    <strong class="text-dark"> $38.90</strong>
-                                </div>
-                            </div>
-
-                            <div class="d-flex mb-3">
-                                <a href="#" class="me-3">
-                                    <img
-                                        src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/9.webp"
-                                        style="min-width: 96px; height: 96px"
-                                        class="img-md img-thumbnail"
-                                        />
-                                </a>
-                                <div class="info">
-                                    <a href="#" class="nav-link mb-1">
-                                        Summer New Men's Denim <br />
-                                        Jeans Shorts
-                                    </a>
-                                    <strong class="text-dark"> $29.50</strong>
-                                </div>
-                            </div>
-
-                            <div class="d-flex mb-3">
-                                <a href="#" class="me-3">
-                                    <img
-                                        src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/10.webp"
-                                        style="min-width: 96px; height: 96px"
-                                        class="img-md img-thumbnail"
-                                        />
-                                </a>
-                                <div class="info">
-                                    <a href="#" class="nav-link mb-1">
-                                        T-shirts with multiple colors, for men and lady
-                                    </a>
-                                    <strong class="text-dark"> $120.00</strong>
-                                </div>
-                            </div>
-
-                            <div class="d-flex">
-                                <a href="#" class="me-3">
-                                    <img
-                                        src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/11.webp"
-                                        style="min-width: 96px; height: 96px"
-                                        class="img-md img-thumbnail"
-                                        />
-                                </a>
-                                <div class="info">
-                                    <a href="#" class="nav-link mb-1">
-                                        Blazer Suit Dress Jacket for Men, Blue color
-                                    </a>
-                                    <strong class="text-dark"> $339.90</strong>
-                                </div>
-                            </div>
+                            <c:forEach items="${sim}" var="p">
+                                <c:if test="${p.product_id ne detail.product_id}">
+                                    <div class="d-flex mb-3">
+                                        <a href="detail?product_id=${p.product_id}" class="me-3">
+                                            <img
+                                                src="${pageContext.request.contextPath}/${p.img}"
+                                                alt="Similar Items"
+                                                style="min-width: 96px; height: 96px"
+                                                class="img-md img-thumbnail"
+                                                />
+                                        </a>
+                                        <div class="info">
+                                            <a href="detail?product_id=${p.product_id}" class="nav-link mb-1">
+                                                ${p.product_name}
+                                            </a>
+                                            <p>${p.product_description}</p>
+                                            <strong class="text-dark"> ${p.product_price}</strong>
+                                        </div>
+                                    </div>
+                                </c:if>
+                            </c:forEach>
                         </div>
                     </div>
                 </div>
             </div>
             </section>
+
+            <script>
+                document.getElementById('minusButton').addEventListener('click', function () {
+                    var input = document.getElementById('quantityInput');
+                    var value = parseInt(input.value, 10);
+                    value = isNaN(value) ? 0 : value;
+                    value--;
+                    input.value = value < 1 ? 1 : value;
+                });
+
+                document.getElementById('plusButton').addEventListener('click', function () {
+                    var input = document.getElementById('quantityInput');
+                    var value = parseInt(input.value, 10);
+                    value = isNaN(value) ? 0 : value;
+                    value++;
+                    input.value = value;
+                });
+            </script>
 
 

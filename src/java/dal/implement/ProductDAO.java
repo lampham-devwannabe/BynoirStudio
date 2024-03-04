@@ -5,6 +5,7 @@
 package dal.implement;
 
 import dal.GenericDAO;
+import java.sql.SQLException;
 import java.util.LinkedHashMap;
 import java.util.List;
 import model.Products;
@@ -118,5 +119,38 @@ public class ProductDAO extends GenericDAO<Products> {
         parameterMap.put("img", img);
         parameterMap.put("product_id", product_id);
         updateGenericDAO(sql, parameterMap);
+    }
+
+    public int findQuantitySum(int product_id) {
+        int sum = 0;
+        try {
+            connection = getConnection();
+            String sql = "SELECT SUM(quantity) AS [quantity]\n"
+                    + "FROM [Products_Size]\n"
+                    + "WHERE [product_id] = ?";
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, product_id);
+            resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                sum = resultSet.getInt("quantity");
+            }
+        } catch (SQLException e) {
+            System.out.println("SQLException: " + e.getMessage());
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                System.err.println("SQLException: " + e.getMessage());
+            }
+        }
+        return sum;
     }
 }

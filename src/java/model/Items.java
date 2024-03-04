@@ -26,6 +26,5 @@ import lombok.ToString;
 public class Items {
     private Products product;
     private int quantity;
-    private String size;
-    private String color;
+    private double price;
 }

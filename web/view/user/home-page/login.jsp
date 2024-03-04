@@ -40,6 +40,7 @@
         <div class="limiter">
             <div class="container-login100" style="background-image: url('${pageContext.request.contextPath}/assets/img/banner2.png');">
                 <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                    <c:set var="cookies" value="${pageContext.request.cookies}"/>
                     <form class="login100-form validate-form" action="${pageContext.request.contextPath}/login" method="POST">
                         <span class="login100-form-title p-b-49">
                             Login
@@ -47,13 +48,13 @@
 
                         <div class="wrap-input100 validate-input m-b-23" data-validate = "Email is required">
                             <span class="label-input100">Email</span>
-                            <input class="input100" type="text" name="email" placeholder="Type your email">
+                            <input class="input100" type="text" name="email" placeholder="Type your email" value="${cookie.c_email.value}">
                             <span class="focus-input100" data-symbol="&#xf206;"></span>
                         </div>
 
                         <div class="wrap-input100 validate-input" data-validate="Password is required">
                             <span class="label-input100">Password</span>
-                            <input class="input100" type="password" name="pass" placeholder="Type your password">
+                            <input class="input100" type="password" name="pass" placeholder="Type your password" value="${cookie.c_pass.value}">
                             <span class="focus-input100" data-symbol="&#xf190;"></span>
                         </div>
 
@@ -64,7 +65,10 @@
                         </div>
 
                         <div class="text-center text-danger">${ms}</div>
-
+                        
+                        <!-- Remember me checkbox -->
+                        <div class="p-b-10"><input type="checkbox" name="remember" value="ON" ${(cookie.c_rem != null ? 'checked' : '')}> Remember me</div>                      
+                        
                         <div class="container-login100-form-btn">
                             <div class="wrap-login100-form-btn">
                                 <div class="login100-form-bgbtn"></div>

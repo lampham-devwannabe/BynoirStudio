@@ -8,6 +8,7 @@ import dal.implement.UserDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -20,29 +21,12 @@ import model.Users;
  */
 public class LoginController extends HttpServlet {
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getRequestDispatcher("view/user/home-page/login.jsp").forward(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -56,6 +40,25 @@ public class LoginController extends HttpServlet {
         // get input value from login.jsp
         String email = request.getParameter("email");
         String password = request.getParameter("pass");
+        String r = request.getParameter("remember");
+        // create 3 cookies: store email, password and remember me status
+        Cookie c1 = new Cookie("c_email", email);
+        Cookie c2 = new Cookie("c_pass", password);
+        Cookie c3 = new Cookie("c_rem", r);
+        if (r != null) {
+            // user chose to remember account 
+            c1.setMaxAge(60*60*24*7);
+            c2.setMaxAge(60*60*24*7);
+            c3.setMaxAge(60*60*24*7);
+        } else {
+            c1.setMaxAge(0);
+            c2.setMaxAge(0);
+            c3.setMaxAge(0);
+        }
+        // save cookies into browser
+        response.addCookie(c1);
+        response.addCookie(c2);
+        response.addCookie(c3);
         Users u = uDAO.login(email, password);
         if (u == null) {
             String ms = "Wrong email or password";

@@ -23,12 +23,9 @@ import lombok.ToString;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Bills_Detail {
-    private int detail_id;
-    private int bill_id;
-    private Products product;
-    private String size;
-    private String color;
+public class Orders_Detail {
+    private int order_id;
+    private int product_id;
     private int quantity;
-    private Float money;
+    private double price;
 }

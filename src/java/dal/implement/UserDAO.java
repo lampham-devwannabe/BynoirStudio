@@ -105,9 +105,4 @@ public class UserDAO extends GenericDAO<Users> {
         parameterMap.put("user_id", id);
         deleteGenericDAO(sql, parameterMap);
     }
-
-    public static void main(String[] args) {
-        UserDAO dao = new UserDAO();
-        dao.updateRole(3, false);
-    }
 }

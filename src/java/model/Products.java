@@ -25,7 +25,7 @@ import lombok.ToString;
 @Setter
 public class Products {
     private int product_id;
-    private String category_id;
+    private int category_id;
     private String product_name;
     private double product_price;
     private String product_description;

@@ -27,7 +27,7 @@
                 <jsp:include page="../../common/user/sidebar.jsp"></jsp:include>
                     <!-- Product list -->
                     <div class="col-md-12">         
-                        <div class="row d-flex" style="justify-content: center">
+                        <div class="row d-flex" style="justify-content: center; margin: 0 10px">
                         <c:forEach items="${productList}" var="p">
                             <div class="col-lg-4 mb-md-5 ">
                                 <div class="card h-100">
@@ -36,11 +36,6 @@
                                         <div class="text-center">
                                             <h5 class="card-title"><a href="detail?product_id=${p.product_id}">${p.product_name}</a></h5>
                                             <p>${p.product_price}</p>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer  bg-transparent border-top-0">
-                                        <div class="text-center">
-                                            <a href="#" class="btn btn-outline-dark">View option</a>
                                         </div>
                                     </div>
                                 </div>

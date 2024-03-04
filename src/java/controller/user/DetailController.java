@@ -11,13 +11,16 @@ import dal.implement.SizeDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.util.List;
+import model.Cart;
 import model.Categories;
 import model.Colors;
+import model.Items;
 import model.Products;
 import model.Sizes;
 
@@ -38,16 +41,21 @@ public class DetailController extends HttpServlet {
         HttpSession session = request.getSession();
         String id_raw = request.getParameter("product_id");
         int product_id;
+        int product_quantity;
         try {
             product_id = Integer.parseInt(id_raw);
+            product_quantity = pDAO.findQuantitySum(product_id);
             Products p = pDAO.findById(product_id);
             Categories cate = cateDAO.findCateByProductId(product_id);
             Colors color = colorDAO.findColorByProductId(product_id);
             List<Sizes> sizeList = sizeDAO.findAll();
+            List<Products> similarItems = pDAO.findByCateId(cate.getCategory_id());          
             session.setAttribute("sizeList", sizeList);
             session.setAttribute("detail", p);
             session.setAttribute("cateDetail", cate);
             session.setAttribute("color", color);
+            session.setAttribute("quantity", product_quantity);
+            session.setAttribute("sim", similarItems);
             request.getRequestDispatcher("view/user/detail/product-detail.jsp").forward(request, response);
         } catch (Exception e) {
             out.println(e.getMessage());
