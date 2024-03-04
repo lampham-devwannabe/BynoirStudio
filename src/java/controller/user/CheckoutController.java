@@ -32,18 +32,20 @@ public class CheckoutController extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession(true);
         Cart cart = null;
-        Object o = request.getParameter("cart");
+        Object o = session.getAttribute("cart");
         if (o != null) {
             cart = (Cart) o;
         } else {
             cart = new Cart();
         }
+        System.out.println(cart.getId());
         Users u = null;
         Object a = session.getAttribute("currentLogin");
         if (a != null) {
             u = (Users) a;
             OrderDAO oDAO = new OrderDAO();
-            oDAO.addOrder(u, cart);
+            int oId = oDAO.addOrder(u, cart);
+            cart.setId(oId);
             oDAO.addOrderDetail(cart);
             session.removeAttribute("cart");
             session.setAttribute("size", 0);

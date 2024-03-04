@@ -70,7 +70,7 @@
 
                         <div class="text-center text-danger m-b-10">${notMatchingPass}</div>
                         <div class="text-center text-danger m-b-21">${usedEmail}</div>
-                        
+
                         <div class="container-login100-form-btn">
                             <div class="wrap-login100-form-btn">
                                 <div class="login100-form-bgbtn"></div>
@@ -79,16 +79,16 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="flex-col-c p-t-155">
-                            <span class="txt1 p-b-17">
-                                Already have an account?
-                            </span>
-
-                            <a href="login.jsp" class="txt2">
-                                Log In
-                            </a>
-                        </div>
                     </form>
+                    <div class="flex-col-c p-t-155">
+                        <span class="txt1 p-b-17">
+                            Already have an account?
+                        </span>
+
+                        <a href="${pageContext.request.contextPath}/login" class="txt2">
+                            Log In
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

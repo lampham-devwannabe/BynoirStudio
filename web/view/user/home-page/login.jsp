@@ -65,10 +65,10 @@
                         </div>
 
                         <div class="text-center text-danger">${ms}</div>
-                        
+
                         <!-- Remember me checkbox -->
                         <div class="p-b-10"><input type="checkbox" name="remember" value="ON" ${(cookie.c_rem != null ? 'checked' : '')}> Remember me</div>                      
-                        
+
                         <div class="container-login100-form-btn">
                             <div class="wrap-login100-form-btn">
                                 <div class="login100-form-bgbtn"></div>
@@ -79,16 +79,16 @@
 
                         </div>
 
-                        <div class="flex-col-c p-t-155">
-                            <span class="txt1 p-b-17">
-                                Dont have an account?
-                            </span>
-
-                            <a href="signup.jsp" class="txt2">
-                                Sign Up
-                            </a>
-                        </div>
                     </form>
+                    <div class="flex-col-c p-t-155">
+                        <span class="txt1 p-b-17">
+                            Dont have an account?
+                        </span>
+
+                        <a href="${pageContext.request.contextPath}/signup" class="txt2">
+                            Sign Up
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -30,7 +30,7 @@ public class OrderDAO extends GenericDAO<Orders> {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    public void addOrder(Users u, Cart c) {
+    public int addOrder(Users u, Cart c) {
         LocalDate currentDate = java.time.LocalDate.now();
         String date = currentDate.toString();
         String sql = "INSERT INTO [dbo].[Orders]\n"
@@ -44,8 +44,8 @@ public class OrderDAO extends GenericDAO<Orders> {
         parameterMap = new LinkedHashMap<>();
         parameterMap.put("user_id", u.getUser_id());
         parameterMap.put("order_date", date);
-        parameterMap.put("total_money", c.getTotalMoney());
-        insertGenericDAO(sql, parameterMap);
+        parameterMap.put("total_money", c.getTotalMoney() + 30000);
+        return insertGenericDAO(sql, parameterMap);
     }
 
     public int getOrderId() {
@@ -62,8 +62,8 @@ public class OrderDAO extends GenericDAO<Orders> {
     }
 
     public void addOrderDetail(Cart c) {
-        parameterMap = new LinkedHashMap<>();
         for (Items i : c.getItemList()) {
+            parameterMap = new LinkedHashMap<>();
             String sql = "INSERT INTO [dbo].[Orders_Detail]\n"
                     + "           ([order_id]\n"
                     + "           ,[product_id]\n"
@@ -74,7 +74,7 @@ public class OrderDAO extends GenericDAO<Orders> {
                     + "           ,?\n"
                     + "           ,?\n"
                     + "           ,?)";
-            parameterMap.put("order_id", getOrderId());
+            parameterMap.put("order_id", c.getId());
             parameterMap.put("product_id", i.getProduct().getProduct_id());
             parameterMap.put("quantity", i.getQuantity());
             parameterMap.put("price", i.getPrice());
@@ -87,10 +87,11 @@ public class OrderDAO extends GenericDAO<Orders> {
             OrderDAO dao = new OrderDAO();
             Users u = new Users(2, "lam@gmail.com", "lam", "123", false);
             Cart c = new Cart();
-            Products p = new Products(30, 5, "test", 25000, "...", "");
+            Products p = new Products(5, 5, "test", 25000, "...", "");
             Items i = new Items(p, 3, p.getProduct_price() * 1.2);
             c.addItemToCart(i);
-            dao.addOrder(u, c);
+            int oid = dao.addOrder(u, c);
+            c.setId(oid);
             dao.addOrderDetail(c);
             System.out.println("Done");
         } catch (Exception e) {

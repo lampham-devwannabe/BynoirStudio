@@ -57,20 +57,22 @@ public class UserDAO extends GenericDAO<Users> {
     }
 
     public void signUp(String email, String name, String password) {
+        boolean admin = false;
         String sql = "INSERT INTO [dbo].[Users]\n"
                 + "           ([user_email]\n"
                 + "           ,[user_fullname]\n"
                 + "           ,[user_password]\n"
-                + "           ,[isAdmin])\n"
+                + "           ,[admin])\n"
                 + "     VALUES\n"
                 + "           (?\n"
                 + "           ,?\n"
                 + "           ,?\n"
-                + "           ,0)";
+                + "           ,?)";
         parameterMap = new LinkedHashMap<>();
         parameterMap.put("user_email", email);
         parameterMap.put("user_fullname", name);
         parameterMap.put("user_password", password);
+        parameterMap.put("admin", admin);
         insertGenericDAO(sql, parameterMap);
     }
 
@@ -104,5 +106,14 @@ public class UserDAO extends GenericDAO<Users> {
         parameterMap = new LinkedHashMap<>();
         parameterMap.put("user_id", id);
         deleteGenericDAO(sql, parameterMap);
+    }
+
+    public static void main(String[] args) {
+        try {
+            UserDAO dao = new UserDAO();
+            dao.signUp("nguyen@gmail.com", "nguyen", "123");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
