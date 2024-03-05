@@ -249,17 +249,23 @@
     <body>
         <!-- Navbar -->
         <jsp:include page="../common/user/navbar.jsp"></jsp:include>
-            <div id="editEmployeeModal" style="margin: 5% 0 5%">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <form action="editProduct" method="POST">
-                            <div class="header">						
-                                <h4 class="modal-title text-center">Edit Employee</h4>                               
-                            </div>
-                            <div class="modal-body">
-                                <div class="form-group">
-                                    <label>Product ID</label>
-                                    <input type="text" name="id" class="form-control" value="${p.product_id}" readonly required>
+        <c:if test="${not empty sessionScope['invalid']}">
+            <script>
+                alert('Invalid Price');
+            </script>
+            <c:remove var="invalid" scope="session" />
+        </c:if>
+        <div id="editEmployeeModal" style="margin: 5% 0 5%">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="editProduct" method="POST">
+                        <div class="header">						
+                            <h4 class="modal-title text-center">Edit Employee</h4>                               
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Product ID</label>
+                                <input type="text" name="id" class="form-control" value="${p.product_id}" readonly required>
                             </div>
                             <div class="form-group">
                                 <label>Name</label>
@@ -279,7 +285,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Price</label>
-                                <input type="text" name="price" class="form-control" value="${p.product_price}" required>
+                                <input type="number" name="price" class="form-control" value="${p.product_price}" required>
                             </div>		
                             <div class="form-group">
                                 <label>Category</label>

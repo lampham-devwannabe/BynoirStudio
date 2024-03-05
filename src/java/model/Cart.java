@@ -6,30 +6,29 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 /**
  *
  * @author lamph
  */
-@ToString
-@Builder
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
 public class Cart {
 
     private List<Items> itemList;
     int id;
-   
+
+    public Cart(List<Items> itemList, int id) {
+        this.itemList = itemList;
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public Cart() {
         itemList = new ArrayList<>();
     }
@@ -90,7 +89,7 @@ public class Cart {
         }
         return null;
     }
-    
+
     public static void main(String[] args) {
         Products p = new Products(30, 3, "test", 30000, "", "");
         Products p1 = new Products(31, 5, "gag", 35000, "", "");

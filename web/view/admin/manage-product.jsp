@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        
+
         <!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/assets/img/black-logo.png">    
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -277,37 +277,43 @@
     <body>
         <!-- Navbar -->
         <jsp:include page="../common/user/navbar.jsp"></jsp:include>
-            <div class="container-xl">
-                <div class="table-responsive">
-                    <div class="table-wrapper" style="margin-top: 5%">
-                        <div class="table-title">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <h2 style="color: white">Manage <b>Products</b></h2>
-                                </div>
-                                <div class="col-sm-6">
-                                    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
-                                    <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
-                                </div>
+        <c:if test="${not empty sessionScope['invalid']}">
+            <script>
+                alert('Invalid Price');
+            </script>
+            <c:remove var="invalid" scope="session" />
+        </c:if>
+        <div class="container-xl">
+            <div class="table-responsive">
+                <div class="table-wrapper" style="margin-top: 5%">
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h2 style="color: white">Manage <b>Products</b></h2>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
+                                <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
                             </div>
                         </div>
-                        <table class="table table-striped table-hover">
-                            <thead>
-                                <tr>    
-                                    <th>
-                                        <span class="custom-checkbox">
-                                            <input type="checkbox" id="selectAll">
-                                            <label for="selectAll"></label>
-                                        </span>
-                                    </th>
-                                    <th>Name</th>
-                                    <th>Image</th>
-                                    <th>Description</th>
-                                    <th>Price</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                    </div>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>    
+                                <th>
+                                    <span class="custom-checkbox">
+                                        <input type="checkbox" id="selectAll">
+                                        <label for="selectAll"></label>
+                                    </span>
+                                </th>
+                                <th>Name</th>
+                                <th>Image</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                             <c:forEach items="${productList}" var="p">
                                 <tr>
                                     <td>
@@ -365,7 +371,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Price</label>
-                                <input type="text" class="form-control" name="price" required>
+                                <input type="number" class="form-control" name="price" required>
                             </div>
                             <div class="form-group">
                                 <label>Category</label>

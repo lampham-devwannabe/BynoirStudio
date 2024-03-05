@@ -79,7 +79,7 @@ public class ProductDAO extends GenericDAO<Products> {
         deleteGenericDAO(sql, parameterMap);
     }
 
-    public void insertProduct(int category_id, String product_name, Float product_price,
+    public void insertProduct(int category_id, String product_name, double product_price,
             String product_description, String img) {
         String sql = "INSERT INTO [dbo].[Products]\n"
                 + "           ([category_id]\n"

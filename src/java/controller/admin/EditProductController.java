@@ -12,6 +12,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import model.Products;
 
 /**
@@ -30,6 +31,7 @@ public class EditProductController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+        HttpSession session = request.getSession();
         ProductDAO pDAO = new ProductDAO();
         ColorDAO colorDAO = new ColorDAO();
         String id_raw = request.getParameter("id");
@@ -42,10 +44,16 @@ public class EditProductController extends HttpServlet {
         try {
             int id = Integer.parseInt(id_raw);
             double price = Double.parseDouble(price_raw);
-            int cate = Integer.parseInt(cate_raw);
-            pDAO.updateProduct(cate, name, price, desc, img, id);
-            colorDAO.updateColor(color, id);
-            response.sendRedirect("manageProduct");
+            if (price < 0) {
+                String invalid = "Invalid price";
+                session.setAttribute("invalid", invalid);
+                response.sendRedirect("manageProduct");
+            } else {
+                int cate = Integer.parseInt(cate_raw);
+                pDAO.updateProduct(cate, name, price, desc, img, id);
+                colorDAO.updateColor(color, id);
+                response.sendRedirect("manageProduct");
+            }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
