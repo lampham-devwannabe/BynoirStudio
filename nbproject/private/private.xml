@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Workspace/JavaWeb/HE181615_PRJ301_Assignment/src/java/dal/implement/UserDAO.java</file>
-            <file>file:/C:/Workspace/JavaWeb/HE181615_PRJ301_Assignment/src/java/controller/user/SignupController.java</file>
-            <file>file:/C:/Workspace/JavaWeb/HE181615_PRJ301_Assignment/web/view/common/user/navbar.jsp</file>
-            <file>file:/C:/Workspace/JavaWeb/HE181615_PRJ301_Assignment/web/view/user/home-page/login.jsp</file>
-            <file>file:/C:/Workspace/JavaWeb/HE181615_PRJ301_Assignment/src/java/controller/user/LoginController.java</file>
-            <file>file:/C:/Workspace/JavaWeb/HE181615_PRJ301_Assignment/web/view/user/home-page/signup.jsp</file>
+            <file>file:/C:/Workspace/JavaWeb/HE181615_PRJ301_Assignment/src/java/model/Orders_Detail.java</file>
+            <file>file:/C:/Workspace/JavaWeb/HE181615_PRJ301_Assignment/src/java/model/Items.java</file>
+            <file>file:/C:/Workspace/JavaWeb/HE181615_PRJ301_Assignment/src/java/model/Cart.java</file>
+            <file>file:/C:/Workspace/JavaWeb/HE181615_PRJ301_Assignment/src/java/model/Orders.java</file>
         </group>
     </open-files>
 </project-private>
